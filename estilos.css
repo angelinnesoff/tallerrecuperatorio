@@ -1,81 +1,182 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-}
-
-.contenedor {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #bec2c5;
+  color: #333;
+  line-height: 1.6;
   padding: 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  margin-top: 30px;
 }
 
-.logo {
-  display: block;
+/* Contenedor principal */
+.container {
+  max-width: 1000px;
   margin: auto;
-  width: 100px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: #000000 0px 0px 10px;
 }
 
-h2 {
+/* Título principal */
+h1 {
   text-align: center;
+  margin-bottom: 30px;
+  color: #4CAF50;
 }
 
-label {
-  display: block;
-  margin-top: 10px;
+/* Secciones */
+.div-usuario,
+.div-btn,
+.div-codigo-ficha,
+.div-nombre-programa {
+  margin-bottom: 20px;
 }
 
-input, select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
+/* Usuario */
+.div-usuario p {
+  font-size: 1.1rem;
 }
 
-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #2ecc71;
+/* Botón salir */
+#btn-salir {
+  background-color: #d9534f;
   color: white;
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
   float: right;
+  transition: background 0.3s;
 }
 
-button:hover {
-  background-color: #27ae60;
+#btn-salir:hover {
+  background-color: #c9302c;
+}
+
+/* Select y input */
+select,
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Tabla */
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 20px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
 }
 
-th, td {
-  border: 1px solid #999;
-  padding: 8px;
+table thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Footer */
+.div-footer {
   text-align: center;
+  margin-top: 40px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
 }
 
-footer {
-  margin-top: 30px;
+.div-footer p,
+.div-footer h3 {
+  margin: 5px 0;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .div-btn {
+    text-align: center;
+    float: none;
+  }
+
+  #btn-salir {
+    float: none;
+    width: 100%;
+  }
+}
+
+.text-success {
+  background-color: #d66363;
+  color: #f1f1f1;
+}
+
+/* Estilos para el formulario de inicio */
+
+.contenedor-inicio {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: #000000 0px 0px 10px;
+}
+
+.contenedor-inicio h2 {
   text-align: center;
-  font-size: 14px;
+  color: #4CAF50;
+  margin-bottom: 20px;
 }
 
-.negativo {
-  color: red;
+#formulario-inicio label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
 }
 
-.oculto {
+#formulario-inicio input[type="text"],
+#formulario-inicio input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#formulario-inicio button[type="button"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#formulario-inicio button[type="submit"]:hover {
+  background-color: #025aa5;
+}
+
+#contenedor-oculto {
   display: none;
 }
-
-.cabecera {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#contenedor-mostrar {
+  display: block;
 }
