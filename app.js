@@ -69,8 +69,8 @@ function filtrarPorRegional() {
     const fila = document.createElement("tr");
 
     const cod = c.codigo_centro || "—";
-    const muni = c.municipio || "—";
-    const nom = c.nombre_centro || "—";
+    const muni = c.municipio_centro || "—";
+    const nom = c.nombre_centro_formacion || "—";
     const lat = parseFloat(c.latitud);
     const lon = parseFloat(c.longitud);
 
