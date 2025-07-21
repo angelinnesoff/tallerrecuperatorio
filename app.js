@@ -31,6 +31,7 @@ function cargarDatos() {
   fetch(urlAPI)
     .then(res => res.json())
     .then(data => {
+      console.log(data[0]); // 👈🏼 Esto imprime la estructura de un centro en la consola
       centros = data;
       llenarSelectRegional(data);
       if (localStorage.getItem("regional")) {
@@ -66,17 +67,16 @@ function filtrarPorRegional() {
   tbody.innerHTML = "";
 
   filtrados.forEach(c => {
-    const fila = document.createElement("tr");
-
     const cod = c.codigo_centro || "—";
-    const muni = c.municipio_centro || "—";
-    const nom = c.nombre_centro_formacion || "—";
+    const muni = c.municipio || c.municipio_centro || "—"; // aquí puedes cambiar según lo que diga console
+    const nom = c.nombre_centro || c.nombre_centro_formacion || c.nombre_centro_de_formacion || "—";
     const lat = parseFloat(c.latitud);
     const lon = parseFloat(c.longitud);
 
     const celdaLat = `<td class="${lat < 0 ? 'negativo' : ''}">${isNaN(lat) ? "—" : lat}</td>`;
     const celdaLon = `<td class="${lon < 0 ? 'negativo' : ''}">${isNaN(lon) ? "—" : lon}</td>`;
 
+    const fila = document.createElement("tr");
     fila.innerHTML = `
       <td>${cod}</td>
       <td>${muni}</td>
