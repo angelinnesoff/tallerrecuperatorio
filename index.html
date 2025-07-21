@@ -1,54 +1,73 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>AVI - SENA</title>
-  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Centros de Formacion</title>
 </head>
+
 <body>
-  <div id="login" class="contenedor">
-    <img src="logo sena sof.png" alt="Logo SENA" class="logo">
-    <h2>Ingreso al Sistema</h2>
-    <label>Nombre de usuario:</label>
-    <input type="text" id="usuario"><br>
-    <label>Contraseña:</label>
-    <input type="password" id="contrasena"><br>
-    <button onclick="iniciarSesion()">Ingresar</button>
-  </div>
-
-  <div id="app" class="contenedor oculto">
-    <div class="cabecera">
-      <img src="logo sena sof.png" alt="Logo SENA" class="logo">
-      <button onclick="cerrarSesion()">Salir</button>
+  <div id="contenedor-mostrar">
+    <div class="contenedor-inicio">
+      <h2>Iniciar Sesión</h2>
+      <form id="formulario-inicio">
+        <label for="usuario">Nombre de Usuario:</label>
+        <input type="text" id="usuario" required>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" required>
+        <button type="button" id="btn-iniciar">Iniciar Sesión</button>
+      </form>
     </div>
-    <p><strong>Usuario:</strong> <span id="nombreUsuario"></span></p>
-    <h2>INFORMACIÓN CENTROS DE FORMACIÓN</h2>
-    <p><strong>Fecha Reporte:</strong> 21/07/2025</p>
-    <label>Seleccione Nombre Regional</label>
-    <select id="selectRegional" onchange="filtrarPorRegional()">
-      <option value="">--Seleccione--</option>
-    </select>
-    <p><strong>Cantidad Centros:</strong> <span id="cantidad"></span></p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Código Centro</th>
-          <th>Municipio</th>
-          <th>Nombre Centro Formación</th>
-          <th>Latitud</th>
-          <th>Longitud</th>
-        </tr>
-      </thead>
-      <tbody id="tablaCentros"></tbody>
-    </table>
-
-    <footer>
-      <p><strong>Elaborado por:</strong> angelinne sofia alzate casamachin</p>
-      <p>Tecnólogo en Análisis y Desarrollo de Software<br>Ficha 2993013</p>
-    </footer>
   </div>
-
-  <script src="app.js"></script>
+  <div id="contenedor-oculto">
+    <div class="container">
+      <h1>INFORMACION CENTROS DE FORMACION</h1>
+      <div class="div-usuario">
+        <p id="nombre-usuario"></p>
+      </div>
+      <div class="div-btn">
+        <button type="button" id="btn-salir">Salir</button>
+      </div>
+      <div class="div-codigo-ficha">
+        <p><strong>Seleccione Codigo Ficha:</strong></p>
+        <select id="codigoFicha">
+          <option value="" disabled selected>Seleccione una opción</option>
+        </select>
+      </div>
+      <div class="div-nombre-programa">
+        <p><strong>Cantidad de centros:</strong></p>
+        <p id="cantidadCentros"></p>
+      </div>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Codigo Centro</th>
+              <th>Municipio</th>
+              <th>Nombre Centro de Formacion</th>
+              <th colspan="2">Coordenadas</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>Latitud</th>
+              <th>Longitud</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-documentos"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="div-footer">
+      <p><strong>Elaborado por:</strong> Sofia</p>
+      <h3>Tecnologo y desarrollo de software</h3>
+      <p><strong>Ficha:</strong> 2993013</p>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
 </body>
+
 </html>
